@@ -1,0 +1,131 @@
+# /---------------------------------Developed by Leoko--------------------------------\
+# |  ####  ###   #   #  ####  #  #  ####  ####  ###      #      ###    ####  #  #  #  |
+# |  #  #  #  #  #   #  #  #  ## #  #     #     #  #     #     #   #  #      #  ## #  |
+# |  ####  #  #  #   #  ####  # ##  #     ##    #  #     #     #   #  #  ##  #  # ##  |
+# |  #  #  #  #   # #   #  #  #  #  #     #     #  #     #     #   #  #   #  #  #  #  |
+# |  #  #  ###     #    #  #  #  #  ####  ####  ###      ####   ###    ###   #  #  #  |
+# \---------------------------------Developed by Leoko--------------------------------/
+
+
+# MySQL-Settings
+MySQL:
+  UseMySQL: false
+  IP: "localhost"
+  DB-Name: "DB"
+  Username: "root"
+  Password: "root"
+ 
+# Every X minutes the pins will be refreshed form the MySQL [if MySQL is enabled]
+AutoLoad: 5
+
+# If enabled player will be able to login with "/pin PIN"
+# so players which connect via a smartphone will also be able to login
+# !! This will make it very easy for "Login-Crackers" to login !!
+EnablePinCommand: false
+
+#Should the plugin save the plays IP for the auto-login feature
+SaveIP: true
+# The amount of time in MIN how long the IP should stay saved
+# Use -1 for infinit time [= 1 Day] (Recommended)
+SaveDuration: -1
+
+# Add commands which should still be allowed
+# for example /register & /login from AuthMe
+BypassCommands:
+- '/login'
+- '/register'
+
+# If you have a special login server in your bungeecord-network
+# you can specify the name of the server where the player should be
+# connected if he logs in successfully 
+# Set to "none" to disable
+LobbyServer: "none"
+
+#Should there be sounds effects
+Sounds: true
+
+#Optimal length is 4 or 5 and also valid is 3 and 6
+#I don't recoment to use a length that is not between 3 and 6!
+PIN-Length: 4
+
+# If enabled only users with the perm "al.login" need to enter a pin
+PermsLogin: false
+
+# If enabled this will teleport the player to a set location (/setJoinLoc)
+# while he is logging in.
+HideLocation: false
+
+# If enabled the player will be in spectator mode while logging in
+SpectatorOnLogin: true
+
+#The player will be kicked after x sec when he has not logged in
+#Set to -1 to disable this
+KickAfterSec:
+  Seconds: 120
+  KickMessage: "&cNo has iniciado sesión después de 2 minutos!"
+
+#The player will be kicked when he types in the code x times wrong
+#Set to -1 to disable this
+KickAfterTries:
+  Tries: 3
+  KickMessage: "&cNo has iniciado sesión después de 3 intentos"
+
+#The command will be executed after x seconds eg Ban [%IP% or %PLAYER%] no /
+#Set to -1 to disable this
+CommandAfterTries:
+  Tries: -1
+  Command: "banip %IP% You have been banned for typing in the PIN 3 times wrong"
+
+Messages-Chat:
+  AdminPINReset: 
+    User: '&cSu PIN fue restablecido por un administrador'
+    Admin: '&cEl PIN del jugador% PLAYER% se restableció'
+    HasNoPin: '&cEste jugador no tiene PIN'
+  AdminPINSet:
+    User: '&cTu PIN ha cambiado'
+    Admin: '&cEl PIN del jugador% PLAYER% se cambió a% PIN%'
+    NoValidPIN: '&cEste no es un PIN válido'
+  PinCommand: ''
+  ConfReload: '&aEl config.yml ha sido recargado' 
+  NoPerms: "&cNo tienes suficientes permisos"
+Messages-Title:
+  Register:
+    Line1: '&c&lRegistro'
+    Line2: '&cHaga clic en los elementos para establecer un PIN '
+    Stay: 70
+  Registered:
+    Line1: '&a&lBienvenido!'
+    Line2: '&a¡Registro Exitoso! &cSu PIN &8:&7%PIN%'
+    Stay: 70
+  Loggedin:
+    Line1: '&a&lBienvenido!'
+    Line2: '&aPIN aceptado!'
+    Stay: 70
+  AutoLoggedin:
+    Line1: '&a&lBienvenido!'
+    Line2: '&aHas iniciado sesión automáticamente'
+    Stay: 70
+  WrongPIN:
+    Line1: '&c&lPin erróneo'
+    Line2: '&7&oPIN no aceptado, intente nuevamente'
+    Stay: 70
+  FastLoginLog:
+    Line1: '&9&lPREMIUM'
+    Line2: '&aNo ocupas iniciar sesión Bienvenido'
+  FastLoginReg:
+    Line1: '&9&lPREMIUM'
+    Line2: '&aNo ocupas registrarte Bienvenido'
+Messages-Items:
+  ShowPIN: '&cMostrar PIN'
+  PIN: '&c&lPIN &8&l»'
+  HiddenNumber: '&7&l*'
+  Numbers:
+    1: '&f&l1'
+    2: '&f&l2'
+    3: '&f&l3'
+    4: '&f&l4'
+    5: '&f&l5'
+    6: '&f&l6'
+    7: '&f&l7'
+    8: '&f&l8'
+    9: '&f&l9'
